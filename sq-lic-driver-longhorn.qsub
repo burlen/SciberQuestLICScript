@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "PV_INSTALL_PREFIX=$PV_INSTALL_PREFIX"
+echo "PV_LIBRARY_PATH=$PV_LIBRARY_PATH"
+echo "PV_PATH=$PV_PATH"
+echo "SQ_DRIVER_CONFIG=$SQ_DRIVER_CONFIG"
+echo "SQ_TIME_STEP=$SQ_TIME_STEP"
+
+DISP_SCRIPT=/share/sge6.2/default/pe_scripts/tacc_xrun
+IBRUN_PATH=/share/sge6.2/default/pe_scripts
+$IBRUN_PATH/ibrun $DISP_SCRIPT $PV_PATH/pvbatch $PV_PATH/sq-lic-driver.py
