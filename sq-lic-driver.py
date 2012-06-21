@@ -234,6 +234,10 @@ print config.outputBaseFileName
 #print config.writeData
 print 'config.outputWidth'
 print config.outputWidth
+print 'config.outputHeight'
+print config.outputHeight
+print 'config.outputMag'
+print config.outputMag
 #
 print 'config.inputFileName'
 print config.inputFileName
@@ -646,18 +650,13 @@ if (config.sliceAlpha>0.001):
 
 # write image
 outputFileName = '%s%09d.png'%(config.outputBaseFileName, int(steps[step]))
-WriteImage(outputFileName,Magnification=2)
+WriteImage(outputFileName,Magnification=config.outputMag)
 print 'output file'
 print outputFileName
 print 'width'
 print width
 print 'height'
 print height
-
-print 'sliceObj'
-print sliceObj
-print 'sliceRep'
-print sliceRep
 
 ## loop over requested step range
 #while (step <= endStep):
