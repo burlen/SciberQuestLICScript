@@ -284,6 +284,15 @@ print config.computeGradient
 print 'config.computeEigenDiagnostic'
 print config.computeEigenDiagnostic
 #
+print 'config.translate'
+print config.translate
+print 'config.scale'
+print config.scale
+print 'config.rotation'
+print config.rotation
+print 'config.origin'
+print config.origin
+#
 print 'config.camZoom'
 print config.camZoom
 print 'config.camPos'
@@ -321,6 +330,7 @@ print config.sliceAlpha
 # read in luts
 LUTs = pvLUTReader()
 for lutFile in config.lutFiles:
+  print lutFile
   LUTs.Read(lutFile)
 print 'available luts'
 LUTs.Print()
@@ -520,6 +530,25 @@ if ((config.vorticityArrayToFilter!='') and
 
 licRep = Show(licObj)
 licRep.Representation = 'Outline'
+
+# transfor the data
+licProps = GetDisplayProperties(licObj)
+if (len(config.origin)):
+  print 'adjusting origin'
+  print config.orgin
+  licProps.Origin = config.origin
+if (len(config.translate)):
+  print 'translating'
+  print config.translate
+  licProps.Position = config.translate
+if (len(config.scale)):
+  print 'scaling'
+  print config.scale
+  licProps.Scale = config.scale
+if (len(config.rotation)):
+  print 'rotating'
+  print config.rotation
+  licProps.Orientation = config.rotation
 Render()
 
 # log the available arrays
@@ -644,6 +673,25 @@ if (config.sliceAlpha>0.001):
     array = sliceObj.PointData.GetArray(config.sliceColorByArray)
     sliceRep.LookupTable = LUTs.GetLUT(array,config.sliceLutName,config.sliceLutRange)
   sliceRep.Opacity = config.sliceAlpha
+
+  sliceProps = GetDisplayProperties(sliceObj)
+  if (len(config.origin)):
+    print 'adjusting origin'
+    print config.orgin
+    sliceProps.Origin = config.origin
+  if (len(config.translate)):
+    print 'translating'
+    print config.translate
+    sliceProps.Position = config.translate
+  if (len(config.scale)):
+    print 'scaling'
+    print config.scale
+    sliceProps.Scale = config.scale
+  if (len(config.rotation)):
+    print 'rotating'
+    print config.rotation
+    sliceProps.Orientation = config.rotation
+
   Render()
   print 'rendered slice'
   sys.stdout.flush()

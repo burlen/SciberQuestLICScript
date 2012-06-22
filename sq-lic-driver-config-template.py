@@ -70,6 +70,12 @@ sliceColorByArray          = 'e-mix1' # if set this array is rendered on blended
 sliceLutName               = 'Spectral' # select a LUT
 sliceLutRange              = []     # force a range on the lut (empty for array bounds)
 
+# transformations
+translate                  = []     # translation for each coord (empty for none)
+scale                      = []     # scale for each coord (empty for none)
+rotation                   = [0,0,90] # rotation about each axis (empty for none)
+origin                     = []     # origin (empty for none)
+
 # camera
 camZoom                    = 1.98   # controls the zoom of the camera, values > 1 zoom in.
 camUp                      = []     # override the camera up. (empty for default)
