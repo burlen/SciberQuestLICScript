@@ -27,7 +27,7 @@ lutFiles                   = ['/home/01237/bloring/apps/all_mpl_cmaps.xml',
 # PuBuGn,
 
 # reader
-inputFileName              = '/scratch/01237/bloring/kh-new-all/jaguar-all/jaguar.bov'
+inputFileName              = '/path/to/.bov'
 arraysToRead               = ['B', 'e-mix1']
 iSubset                    = [-1, -1] # subset to read, if < 0 the extent on disk is used
 jSubset                    = [-1, -1]
@@ -73,7 +73,7 @@ sliceLutRange              = []     # force a range on the lut (empty for array 
 # transformations
 translate                  = []     # translation for each coord (empty for none)
 scale                      = []     # scale for each coord (empty for none)
-rotation                   = [0,0,90] # rotation about each axis (empty for none)
+rotation                   = []     # rotation about each axis (empty for none)
 origin                     = []     # origin (empty for none)
 
 # camera
@@ -84,8 +84,8 @@ camFoc                     = []     # override the camera focal point. (empty fo
 
 # writer
 # output prefix, including path, ends in _
-outputBaseFileName         = '/scratch/01237/bloring/kh-new-all/lic-b-e-mix-large/lic-b-e-mix_'
-outputWidth                = 548    # image width in pixels, or -1 to use defualt
-outputHeight               = 1024   # image height in pixels, or -1 to use default
+outputBaseFileName         = '/path/to/save/image_'
+outputWidth                = 1024   # image width in pixels, or -1 to use defualt
+outputHeight               = 548    # image height in pixels, or -1 to use default
 outputMag                  = 1      # integer multiplier on the final rendered image
 
